@@ -10,17 +10,49 @@ namespace ConsoleMyBankApp
             Cliente cliente = new Cliente("David de Oliveira", "000.000.000-00", "Analista");
                      
 
-            ContaCorrente conta = new ContaCorrente();
+            ContaCorrente conta = new ContaCorrente(cliente, 01, 00001);
 
-            conta.titular = cliente;
-            conta.agencia = 01;
-            conta.conta = 00001;
-
+            
             Console.WriteLine("##### - Conta Corrente Ativada - #####");
-            Console.WriteLine("Titular: {0}", conta.titular.nome);
-            Console.WriteLine("Agência: {0}", conta.agencia);
-            Console.WriteLine("Conta Corrente: {0}", conta.conta);
+            Console.WriteLine("Titular: {0}", conta.getTitular().getNome());
+            Console.WriteLine("Agência: {0}", conta.getAgencia());
+            Console.WriteLine("Conta Corrente: {0}", conta.getConta());
 
+            Console.WriteLine("Parabéns seu novo saldo é de R$ {0} Obrigado por criar a sua conta!", conta.getSaldo());
+
+            //Efetuar deposito pelo Console
+            double valorDeposito;
+
+            Console.WriteLine("Qual valor de deposito?");
+            valorDeposito = Convert.ToInt32(Console.ReadLine());
+            conta.Depositar(valorDeposito);
+
+            Console.WriteLine("Seu novo saldo é  {0}", conta.getSaldo());
+
+            //Efetuar saque pelo console
+            double valorSaque;
+
+            Console.WriteLine("Qual valor de saque?");
+            valorSaque = Convert.ToInt32(Console.ReadLine());
+            conta.Sacar(valorSaque);
+
+            Console.WriteLine("Seu saldo atual é  {0}", conta.getSaldo());
+
+            //criar uma segunda pessoa
+            Cliente clienteThais = new Cliente("Thais Ferreira Clemente", "444.444.444-44", "Analista de Vendas");
+            //criar a conta da segunda pessoa
+            ContaCorrente contaThais = new ContaCorrente(clienteThais, 01, 00002);
+
+            //efetuar Pix para a segunda pessoa
+            double valorPix;
+
+            Console.WriteLine("Qual valor do Pix?");
+            valorPix = Convert.ToInt32(Console.ReadLine());
+            
+            conta.Pix(valorPix, contaThais);
+
+            Console.WriteLine("Seu saldo atual é ** R${0} **", conta.getSaldo());
+            Console.WriteLine("Saldo da cliente Thais ** R${0} **", contaThais.getSaldo());
 
         }
     }
