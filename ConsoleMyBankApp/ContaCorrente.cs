@@ -72,6 +72,7 @@ namespace ConsoleMyBankApp
 
         }
 
+        //valida valor do deposito e efetua transação 
         public double Depositar( double valor)
         {
 
@@ -87,6 +88,7 @@ namespace ConsoleMyBankApp
             return this.saldo;
         }
 
+        //valida valor e efetua transação de saque e debita valor fixo da taxa
         public double Sacar(double valor)
         {
             double taxasaque = 0.50;
@@ -109,12 +111,12 @@ namespace ConsoleMyBankApp
             return this.saldo;
 
         }
-
+        // valida valor e efetua transação PIX para outra conta
         public double Pix(double valor, ContaCorrente contaTerceiro)
         {
             if (valor > this.saldo)
             {
-                Console.WriteLine("#### - Saldo insuficiente!! - ####");
+                Console.WriteLine("#### - Saldo insufic000iente!! - ####");
 
             }
             else
