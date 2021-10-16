@@ -54,6 +54,13 @@ namespace ConsoleMyBankApp
             Console.WriteLine("Seu saldo atual é ** R${0} **", conta.getSaldo());
             Console.WriteLine("Saldo da cliente {0} ** R${1} **", contaThais.getTitular().nome, contaThais.getSaldo());
 
+            //cria uma conta poupança para nosso cliente
+            ContaPoupanca contaPoupanca = new ContaPoupanca(cliente, 01, 00003);
+
+            Console.WriteLine("### - Conta Poupança Criada - ###");
+            Console.WriteLine("Titular: {0}", contaPoupanca.getTitular().getNome());
+            Console.WriteLine("Agencia: {0}", contaPoupanca.getAgencia());
+            Console.WriteLine("Conta: {0}", contaPoupanca.getConta());
         }
     }
 }

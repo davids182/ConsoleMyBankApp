@@ -6,19 +6,17 @@ using System.Threading.Tasks;
 
 namespace ConsoleMyBankApp
 {
-    public class ContaCorrente : Conta  // Conta Corrente herda as classes e métodos da classe abstrata Conta
+    class ContaPoupanca : Conta // herda a classe abstrata conta
     {
 
-
-
-        public ContaCorrente(Cliente titular, int agencia, int conta)
+        public ContaPoupanca(Cliente titular, int agencia, int conta)
         {
 
             this.setTitular(titular);
             this.setAgencia(agencia);
             this.setConta(conta);
 
-        }  
-      
+        }
+
     }
 }
