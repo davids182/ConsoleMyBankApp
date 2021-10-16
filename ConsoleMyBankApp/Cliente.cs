@@ -19,7 +19,7 @@ namespace ConsoleMyBankApp
             this.setProfissao(profissao);
         }
 
-        public string getNome()
+        public virtual string getNome()
         {
 
             return this.nome;

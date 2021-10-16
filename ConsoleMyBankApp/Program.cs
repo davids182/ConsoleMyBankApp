@@ -52,7 +52,7 @@ namespace ConsoleMyBankApp
             conta.Pix(valorPix, contaThais);
 
             Console.WriteLine("Seu saldo atual é ** R${0} **", conta.getSaldo());
-            Console.WriteLine("Saldo da cliente Thais ** R${0} **", contaThais.getSaldo());
+            Console.WriteLine("Saldo da cliente {0} ** R${1} **", contaThais.getTitular().nome, contaThais.getSaldo());
 
         }
     }
